@@ -244,11 +244,14 @@ section h1 {
     text-align: center; 
 } 
  
-.underline { 
-    width: 60px; 
-    height: 3px; 
-    background: var(--primary-color); 
-    margin: 1.1rem auto; 
+section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--violet-doux);
+    margin: 1.2rem auto;
+    border-radius: 2px;
 } 
  
 .projects-grid { 
@@ -462,7 +465,184 @@ background-color: var(--violet-fonce);
 flex-direction: column; 
 } 
 }
- 
 
+
+
+/* SECTION PASSIONS */
+.passions {
+    padding: 80px 20px;
+    background-color:white; /* Gris très clair pour le fond de section */
+    border-radius: 30px;
+}
+
+.section-title {
+    text-align: center;
+    color: #8266d7;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.underline {
+    width: 50px;
+    height: 4px;
+    background: #8b5cf6;
+    margin: 0 auto 50px;
+    border-radius: 2px;
+}
+
+/* GRILLE : 2 en haut, 2 en bas */
+.passions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* CARTE PASSION (Gris foncé & Verre) */
+.passion-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 30px;
+    border-radius: 24px;
+    background: #5c7ad4; /* Gris foncé d'origine */
+    text-align: center;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(232, 222, 222, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+/* EFFET DE FOND AU SURVOL (Violet & Rouge doux) */
+.passion-card:hover {
+    transform: translateY(-12px);
+    background: linear-gradient(135deg, #9769e7, rgba(187, 181, 199, 0.2), rgba(239, 68, 68, 0.2));
+    border-color: rgba(139, 92, 246, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* ICON BOX (Orange doux) */
+.icon-box {
+    width: 70px;
+    height: 70px;
+    background: rgba(251, 146, 60, 0.1); /* Orange doux transparent */
+    border: 2px solid #fb923c; /* Orange doux */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #fb923c;
+    transition: 0.4s;
+}
+
+.passion-card:hover .icon-box {
+    background: #fb923c;
+    color: white;
+    transform: rotate(10deg) scale(1.1);
+}
+
+/* TEXTES */
+.passion-card h3 {
+    color: #ffffff;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+}
+
+.passion-card p {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* RESPONSIVE : 1 colonne sur téléphone */
+@media (max-width: 768px) {
+    .passions-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* SECTION DIVERTISSEMENTS */
+.entertainment {
+    padding: 80px 20px;
+    background-color: #f1f5f9; /* Gris clair pour le fond de section */
+    border-radius: 30px;
+}
+.entertainment img {
+    width: 120px;
+    height: 120px;
+}
+
+/* GRILLE : 2 en haut, 2 en bas */
+.entertainment-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+/* CARTE (Couleur de base blanche pour la clarté) */
+.entertainment-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 25px;
+    border-radius: 20px;
+    background: #ffffff; /* Blanc pur */
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+/* TEXTES */
+.entertainment-card h3 {
+    color: #1e293b; /* Gris foncé pour le texte */
+    margin-bottom: 5px;
+    font-size: 1.25rem;
+}
+
+.entertainment-card p {
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* ICÔNES (Violet doux par défaut) */
+.entertainment-card i {
+    font-size: 2rem;
+    color: #a78bfa; /* Violet doux */
+    min-width: 50px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+/* EFFET AU SURVOL (Mélange Violet, Orange et Rouge doux) */
+.entertainment-card:hover {
+    transform: translateY(-8px);
+    /* Dégradé doux Violet -> Orange -> Rouge */
+    background: linear-gradient(135deg, 
+        rgba(167, 139, 250, 0.1), 
+        rgba(251, 146, 60, 0.1), 
+        rgba(248, 113, 113, 0.1)
+    );
+    border-color: #fb923c; /* Bordure Orange doux au survol */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Au survol, l'icône devient Rouge doux */
+.entertainment-card:hover i {
+    color: #f87171; /* Rouge doux */
+    transform: scale(1.1);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .entertainment-list {
+        grid-template-columns: 1fr;
+    }
+}
 
 
